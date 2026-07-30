@@ -2,8 +2,8 @@
 // Same tradeoff as background.js: this secret is visible to anyone who views
 // this page's source. It only gates casual bot traffic — the real protection
 // against abuse is the Worker's per-IP/day rate limiting, not this string.
-const PROXY_URL = "https://webpage-summarizer-proxy.vishesh-dev.workers.dev/summarize"; // e.g. "https://webpage-summarizer-proxy.yoursubdomain.workers.dev/summarize"
-const SHARED_SECRET = "haqiutj4e3mcnv7g0zlp516w"; // must match the SHARED_SECRET you set with `wrangler secret put`
+const PROXY_URL = ""; // e.g. "https://webpage-summarizer-proxy.yoursubdomain.workers.dev/summarize"
+const SHARED_SECRET = ""; // must match the SHARED_SECRET you set with `wrangler secret put`
 
 const demoInput = document.getElementById("demoInput");
 const demoBtn = document.getElementById("demoBtn");
@@ -45,7 +45,7 @@ async function runDemo() {
 
   if (!PROXY_URL || !SHARED_SECRET) {
     showError(
-      "Live demo isn't wired up yet — set PROXY_URL and SHARED_SECRET in docs/script.js after deploying the backend."
+      "Live demo isn't wired up yet. Set PROXY_URL and SHARED_SECRET in docs/script.js after deploying the backend."
     );
     return;
   }
@@ -81,7 +81,7 @@ async function runDemo() {
 
     const bullets = parseBullets(data.text || "");
     if (bullets.length === 0) {
-      throw new Error("Got an empty response — try pasting a longer passage.");
+      throw new Error("Got an empty response. Try pasting a longer passage.");
     }
 
     showResult(bullets);
