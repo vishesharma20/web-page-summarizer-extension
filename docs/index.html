@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Webpage Summarizer — Chrome Extension</title>
+  <meta name="description" content="A Chrome extension that summarizes any webpage in one click. Try the live AI demo below." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="hero">
+      <div class="wordmark">
+        <span class="wordmark-text">Summar<span class="highlight-swipe">ize</span>r</span>
+      </div>
+      <p class="tagline">A Chrome extension that turns any webpage into a clean, digestible summary — one click, no fluff.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/vishesharma20/web-page-summarizer-extension" target="_blank" rel="noopener">View on GitHub</a>
+        <a class="btn btn-secondary" href="#demo">Try the live demo ↓</a>
+      </div>
+    </header>
+
+    <section class="section" id="demo">
+      <h2>Try it right now</h2>
+      <p class="section-sub">
+        Paste in some article text below and hit summarize. This calls the exact same
+        AI backend the Chrome extension uses — no install, no signup.
+      </p>
+
+      <div class="demo-card">
+        <textarea id="demoInput" rows="8" placeholder="Paste a paragraph or two of article text here…"></textarea>
+        <div class="demo-controls">
+          <button id="demoBtn" class="btn btn-primary">Summarize this text</button>
+          <span id="demoStatus" class="demo-status"></span>
+        </div>
+        <ul id="demoResult" class="summary-list hidden"></ul>
+        <p id="demoError" class="demo-error hidden"></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What it does</h2>
+      <div class="feature-grid">
+        <div class="feature">
+          <h3>Smart extraction</h3>
+          <p>Reads the actual article — skips nav bars, ads, cookie banners, and footers automatically.</p>
+        </div>
+        <div class="feature">
+          <h3>AI-powered, zero setup</h3>
+          <p>Ships with a hosted AI backend so summaries work out of the box — no API key required from users.</p>
+        </div>
+        <div class="feature">
+          <h3>Offline fallback</h3>
+          <p>A from-scratch extractive summarization algorithm keeps it working even if the AI backend is unreachable.</p>
+        </div>
+        <div class="feature">
+          <h3>Bring your own key</h3>
+          <p>Power users can plug in their own OpenAI, Groq, or Anthropic key for unlimited use.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Screenshots</h2>
+      <div class="shot-grid">
+        <figure><img src="../screenshots/load-extension.png" alt="Loading the extension" loading="lazy"/><figcaption>Loading the extension</figcaption></figure>
+        <figure><img src="../screenshots/open-extension-on-page.png" alt="Opening the extension on a page" loading="lazy"/><figcaption>Opening it on a page</figcaption></figure>
+        <figure><img src="../screenshots/summary-1.png" alt="AI summary result" loading="lazy"/><figcaption>AI summary result</figcaption></figure>
+        <figure><img src="../screenshots/summary-2.png" alt="Scrolled summary view" loading="lazy"/><figcaption>Scrolled summary</figcaption></figure>
+        <figure><img src="../screenshots/extension-settings.png" alt="Settings page" loading="lazy"/><figcaption>Settings page</figcaption></figure>
+        <figure><img src="../screenshots/extension-details.png" alt="Extension details" loading="lazy"/><figcaption>Extension details</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section install-section">
+      <h2>Install it</h2>
+      <ol class="install-steps">
+        <li>Clone or download the <a href="https://github.com/vishesharma20/web-page-summarizer-extension" target="_blank" rel="noopener">GitHub repo</a></li>
+        <li>Open <code>chrome://extensions</code>, enable <strong>Developer mode</strong></li>
+        <li>Click <strong>Load unpacked</strong> and select the project folder</li>
+        <li>Pin the icon, open any article, click <strong>Summarize this page</strong></li>
+      </ol>
+    </section>
+
+    <footer class="footer">
+      <p>Built with Chrome Manifest V3, a Cloudflare Worker backend, and a from-scratch local summarization algorithm.</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

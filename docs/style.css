@@ -1,0 +1,267 @@
+:root {
+  --navy: #14213D;
+  --navy-soft: #2A3A5C;
+  --paper: #FAF7F2;
+  --paper-dim: #F1ECE2;
+  --ink: #1B1E2B;
+  --ink-soft: #5B5F6E;
+  --yellow: #FFC845;
+  --yellow-soft: #FFE3A3;
+  --line: #E4DFD3;
+  --error: #B3432B;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+}
+
+.wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+}
+
+.hero {
+  text-align: center;
+  padding: 72px 0 40px;
+}
+
+.wordmark-text {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+}
+
+.highlight-swipe {
+  position: relative;
+  color: var(--navy);
+}
+
+.highlight-swipe::before {
+  content: "";
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  bottom: 4px;
+  height: 0.4em;
+  background: var(--yellow);
+  z-index: -1;
+  transform: rotate(-1deg);
+  border-radius: 3px;
+}
+
+.tagline {
+  max-width: 520px;
+  margin: 16px auto 28px;
+  font-size: 17px;
+  color: var(--ink-soft);
+}
+
+.cta-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 14.5px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.12s ease, background 0.15s ease;
+}
+
+.btn:active { transform: scale(0.98); }
+
+.btn-primary {
+  background: var(--navy);
+  color: var(--paper);
+}
+.btn-primary:hover { background: var(--navy-soft); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--navy);
+  border: 1.5px solid var(--navy);
+}
+.btn-secondary:hover { background: var(--paper-dim); }
+
+.section {
+  padding: 44px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  color: var(--navy);
+  margin: 0 0 8px;
+}
+
+.section-sub {
+  color: var(--ink-soft);
+  font-size: 14.5px;
+  margin: 0 0 24px;
+  max-width: 560px;
+}
+
+/* --- Demo --- */
+.demo-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+#demoInput {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  resize: vertical;
+  color: var(--ink);
+}
+
+#demoInput:focus {
+  outline: 2px solid var(--yellow);
+  outline-offset: 1px;
+}
+
+.demo-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.demo-status {
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.summary-list {
+  margin: 18px 0 0;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.summary-list.hidden { display: none; }
+
+.summary-list li {
+  position: relative;
+  padding: 11px 14px 11px 32px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.summary-list li::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 15px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--yellow);
+}
+
+.demo-error {
+  margin: 14px 0 0;
+  font-size: 13.5px;
+  color: var(--error);
+}
+
+.demo-error.hidden { display: none; }
+
+/* --- Features --- */
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.feature h3 {
+  font-size: 15.5px;
+  color: var(--navy);
+  margin: 0 0 6px;
+}
+
+.feature p {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* --- Screenshots --- */
+.shot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.shot-grid figure {
+  margin: 0;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.shot-grid img {
+  width: 100%;
+  display: block;
+}
+
+.shot-grid figcaption {
+  padding: 8px 10px;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+/* --- Install --- */
+.install-steps {
+  padding-left: 20px;
+  font-size: 14.5px;
+}
+
+.install-steps li { margin-bottom: 8px; }
+
+.install-steps code {
+  background: var(--paper-dim);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.footer {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 640px) {
+  .wordmark-text { font-size: 36px; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .shot-grid { grid-template-columns: 1fr 1fr; }
+}
