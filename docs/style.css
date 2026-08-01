@@ -1,9 +1,9 @@
 :root {
   --navy: #14213D;
   --navy-soft: #2A3A5C;
-  --paper: #d8dae9;
+  --paper: #d5cfe8;
   --paper-dim: #F1ECE2;
-  --ink: #1B1E2B;
+  --ink: #661010;
   --ink-soft: #5B5F6E;
   --yellow: #FFC845;
   --yellow-soft: #FFE3A3;
@@ -340,7 +340,8 @@ body {
 
 .shot-grid figure {
   margin: 0;
-  background: white;
+   max-width: 300px;
+  background: rgb(255, 253, 253);
   border: 1px solid var(--line);
   border-radius: 10px;
   overflow: hidden;
@@ -348,6 +349,9 @@ body {
 
 .shot-grid img {
   width: 100%;
+  display: block;
+  height: 180px;
+  object-fit: cover;
   display: block;
 }
 
