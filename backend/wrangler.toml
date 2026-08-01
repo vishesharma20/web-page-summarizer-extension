@@ -1,0 +1,11 @@
+name = "webpage-summarizer-proxy"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+
+# Create this KV namespace first (see README.md), then paste its id below.
+kv_namespaces = [
+     { binding = "RATE_LIMIT_KV", id = "cac2fbd1f3804428a4c8d3209bbf18c1" }
+   ]
+
+# Secrets (GROQ_API_KEY, SHARED_SECRET) are NOT set here — see README.md,
+# they're set via `wrangler secret put` so they never touch version control.

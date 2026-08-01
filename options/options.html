@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Webpage Summarizer — Settings</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>Summarizer settings</h1>
+    <p class="sub">Works out of the box with a local, offline summarizer. Add an API key below for higher-quality AI summaries.</p>
+
+    <div class="field">
+      <label for="provider">Summary engine</label>
+      <select id="provider">
+        <option value="hosted">AI (built-in — no key needed, recommended)</option>
+        <option value="local">Local (fully offline, no key, lower quality)</option>
+        <option value="openai">OpenAI (gpt-4o-mini) — use your own key</option>
+        <option value="groq">Groq (Llama 3.3 70B) — use your own key</option>
+        <option value="anthropic">Anthropic (Claude) — use your own key</option>
+      </select>
+    </div>
+
+    <div class="field" id="apiKeyField">
+      <label for="apiKey">API key</label>
+      <input type="password" id="apiKey" placeholder="Paste your API key" autocomplete="off" />
+      <p class="field-hint" id="keyHint"></p>
+    </div>
+
+    <div class="field">
+      <label for="maxBullets">Summary length (bullet points)</label>
+      <input type="range" id="maxBullets" min="3" max="8" step="1" />
+      <div class="range-value"><span id="maxBulletsValue">5</span> bullets</div>
+    </div>
+
+    <button id="saveBtn" class="save-btn">Save settings</button>
+    <p id="savedNote" class="saved-note hidden">Saved.</p>
+
+    <hr />
+    <p class="note">
+      Your key is stored only in Chrome's synced extension storage and is sent directly
+      from your browser to the provider you choose (OpenAI or Anthropic) — never to any
+      third-party server. Leave the engine set to <strong>Local</strong> if you'd rather not use a key at all.
+    </p>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

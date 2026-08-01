@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Webpage Summarizer",
+  "short_name": "Summarizer",
+  "version": "1.0.0",
+  "description": "Summarize any webpage in one click. Uses AI (OpenAI/Anthropic) when you add a key, and falls back to a built-in local summarizer that works offline with zero setup.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Summarize this page"
+  },
+  "options_page": "options/options.html",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

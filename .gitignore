@@ -1,0 +1,29 @@
+# --- Node / npm (used by the backend's wrangler CLI) ---
+node_modules/
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+
+# --- Cloudflare Wrangler local state & secrets ---
+backend/.wrangler/
+.wrangler/
+backend/.dev.vars
+.dev.vars
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Editor junk ---
+.vscode/
+*.swp
+
+# --- Build/distribution artifacts (don't commit the packaged zip) ---
+*.zip
+dist/
+
+# --- Personal config: keep your real deployed URL/secret out of git history ---
+# If you split background.js's DEVELOPER_PROXY_URL / EXTENSION_SHARED_SECRET
+# into a separate local config file instead of hardcoding them, ignore it here, e.g.:
+# background.local.js
