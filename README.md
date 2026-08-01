@@ -29,7 +29,7 @@ Cloudflare Worker backend as the extension. No install required to try it.
 > Same tradeoff as the extension's proxy secret: since this page's JS is public,
 > `SHARED_SECRET` is technically visible to anyone who views source. The Worker's
 > per-IP and daily rate limits (in `backend/worker.js`) are what actually protect
-> your Groq quota — the secret just filters out random bot traffic. If you want
+> your Groq quota, the secret just filters out random bot traffic. If you want
 > extra isolation between the demo page and the extension, deploy a second Worker
 > with its own `SHARED_SECRET` and lower limits just for the demo.
 
