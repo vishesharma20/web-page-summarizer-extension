@@ -2,8 +2,8 @@
 // Same tradeoff as background.js: this secret is visible to anyone who views
 // this page's source. It only gates casual bot traffic — the real protection
 // against abuse is the Worker's per-IP/day rate limiting, not this string.
-const PROXY_URL = ""; // e.g. "https://webpage-summarizer-proxy.yoursubdomain.workers.dev/summarize"
-const SHARED_SECRET = ""; // must match the SHARED_SECRET you set with `wrangler secret put`
+const PROXY_URL = "https://webpage-summarizer-proxy.vishesh-dev.workers.dev/summarize"; // e.g. "https://webpage-summarizer-proxy.yoursubdomain.workers.dev/summarize"
+const SHARED_SECRET = "haqiutj4e3mcnv7g0zlp516w"; // must match the SHARED_SECRET you set with `wrangler secret put`
 
 const demoInput = document.getElementById("demoInput");
 const demoBtn = document.getElementById("demoBtn");
